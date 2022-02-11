@@ -22,4 +22,4 @@ I have worked before on a project which was an android movie app based app where
 
 The Get Http method,get all suplier clients : 
 
-![app](C:\Users\HP\source\repos\Megventory-API\Megventory-API\images\index.png)
+![app](index.png)
