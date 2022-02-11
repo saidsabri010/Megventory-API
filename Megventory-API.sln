@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Megventory-API", "Megventory-API\Megventory-API.csproj", "{045CDD54-16E3-4342-923A-4AED4DCB0464}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{045CDD54-16E3-4342-923A-4AED4DCB0464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045CDD54-16E3-4342-923A-4AED4DCB0464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045CDD54-16E3-4342-923A-4AED4DCB0464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045CDD54-16E3-4342-923A-4AED4DCB0464}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15A4146C-2973-4491-A0C4-8345CF5DBF36}
+	EndGlobalSection
+EndGlobal

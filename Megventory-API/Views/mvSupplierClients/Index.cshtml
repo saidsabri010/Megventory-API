@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Megventory_API.Models.mvSupplierClients>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierClientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierClientType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierClientBillingAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierClientPhone1)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierClientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierClientType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierClientBillingAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierClientPhone1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SupplierClientName">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SupplierClientName">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SupplierClientName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
