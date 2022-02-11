@@ -21,4 +21,5 @@ The APIKEY should be replaced in the code with your own,this web app doesnot cov
 I have worked before on a project which was an android movie app based app where i have to parse json to string by making Json requests either object request or array one,sometimes both of them at the same time, the only difference is that in this project i had to parse objects to string,in otherwords we say **Serialization** and **deserialization **.
 
 The Get Http method,get all suplier clients : 
-![app](/images/index.png)
+C:\Users\HP\source\repos\Megventory-API\Megventory-API\images\index.png
+![app](Megventory-API/images/index.png)
