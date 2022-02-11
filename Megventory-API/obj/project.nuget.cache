@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9HQZoUarFbGMX6zdWsuwL0MYz0CxlcUrZzzTjXVqATQOIxHK/4MFMFScAIqepTBZJn1QK/v9+eOSo2FdojP7mw==",
+  "dgSpecHash": "Ukczssim5nM/pcnSjk/udlcIJkPneDWvc6xmUGbtHsMyGglulR8y+QyF/AKU2aR4do7MKwBMk6Xvc87/Gu2jPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\source\\repos\\Megventory-API\\Megventory-API\\Megventory-API.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\Megventory\\Megventory-API\\Megventory-API\\Megventory-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.7\\microsoft.aspnet.webpages.3.2.7.nupkg.sha512",

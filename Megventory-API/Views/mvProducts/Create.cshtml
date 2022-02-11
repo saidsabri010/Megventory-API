@@ -1,0 +1,48 @@
+﻿@model Megventory_API.Models.MvProducts
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>mvProducts</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="mvProduct.ProductSKU" class="control-label"></label>
+                <input asp-for="mvProduct.ProductSKU" class="form-control" />
+                <span asp-validation-for="mvProduct.ProductSKU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvProduct.ProductDescription" class="control-label"></label>
+                <input asp-for="mvProduct.ProductDescription" class="form-control" />
+                <span asp-validation-for="mvProduct.ProductDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvProduct.ProductSellingPrice" class="control-label"></label>
+                <input asp-for="mvProduct.ProductSellingPrice" class="form-control" />
+                <span asp-validation-for="mvProduct.ProductSellingPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvProduct.ProductPurchasePrice" class="control-label"></label>
+                <input asp-for="mvProduct.ProductPurchasePrice" class="form-control" />
+                <span asp-validation-for="mvProduct.ProductPurchasePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

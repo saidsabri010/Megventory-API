@@ -9,30 +9,30 @@ using Megventory_API.Data;
 using Megventory_API.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
-using System.Text;
 using Newtonsoft.Json.Linq;
+using System.Text;
 
 namespace Megventory_API.Controllers
 {
-    public class mvSupplierClientsController : Controller
+    public class mvProductsController : Controller
     {
         private readonly IHttpClientFactory _context;
-        public RootObject supplierClients { get; set; }
-        
+
+        public Product products { get; set; }
 
         const string BASE_URL = "https://api.megaventory.com/v2017a/";
 
-        public mvSupplierClientsController(IHttpClientFactory context)
+        public mvProductsController(IHttpClientFactory context)
         {
             _context = context;
         }
 
-        // GET: mvSupplierClients
+        // GET: mvProducts
         public async Task<IActionResult> Index()
         {
             var message = new HttpRequestMessage();
             message.Method = HttpMethod.Get;
-            message.RequestUri = new Uri($"{BASE_URL}json/reply/SupplierClientGet?APIKEY=609e6dc2acd38dc6@m128114");
+            message.RequestUri = new Uri($"{BASE_URL}json/reply/ProductGet?APIKEY=609e6dc2acd38dc6@m128114");
             message.Headers.Add("Accept", "application/json");
 
             var client = _context.CreateClient();
@@ -42,41 +42,39 @@ namespace Megventory_API.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var responseBody = await response.Content.ReadAsStringAsync();
-                supplierClients = JsonConvert.DeserializeObject<RootObject>(responseBody);
+                products = JsonConvert.DeserializeObject<Product>(responseBody);
             }
             else
             {
                 //
             }
-
-            return View(supplierClients.mvSupplierClients);
+            return View(products.mvProducts);
         }
 
-        // GET: mvSupplierClients/Details/5
-        public async Task<IActionResult> Details(string id)
+        // GET: mvProducts/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-
 
             return View();
         }
 
-        // GET: mvSupplierClients/Create
+        // GET: mvProducts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: mvSupplierClients/Create
+        // POST: mvProducts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(RootObjectPost rootObjectPost)
+        public async Task<IActionResult> Create(MvProducts product)
         {
-            rootObjectPost.APIKEY = "609e6dc2acd38dc6@m128114";
+            product.APIKEY = "609e6dc2acd38dc6@m128114";
             if (ModelState.IsValid)
             {
-                HttpContent httpContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(rootObjectPost), Encoding.UTF8);
+                HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8);
                 System.Diagnostics.Debug.WriteLine("here we go !");
                 System.Diagnostics.Debug.WriteLine(httpContent.ToString());
                 httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
@@ -84,7 +82,7 @@ namespace Megventory_API.Controllers
                 var message = new HttpRequestMessage();
                 message.Content = httpContent;
                 message.Method = HttpMethod.Post;
-                message.RequestUri = new Uri($"{BASE_URL}json/reply/SupplierClientUpdate");
+                message.RequestUri = new Uri($"{BASE_URL}json/reply/ProductUpdate");
                 HttpClient client = _context.CreateClient();
                 HttpResponseMessage response = await client.SendAsync(message);
 
@@ -94,45 +92,42 @@ namespace Megventory_API.Controllers
                 System.Diagnostics.Debug.WriteLine(jsonresult);
                 return RedirectToAction(nameof(Index));
             }
-
-            return View(rootObjectPost);
+            return View(product);
         }
 
-        // GET: mvSupplierClients/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        // GET: mvProducts/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-
             return View();
         }
 
-        // POST: mvSupplierClients/Edit/5
+        // POST: mvProducts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("SupplierClientID,SupplierClientName,SupplierClientEmail,SupplierClientBillingAddress,SupplierClientPhone1")] mvSupplierClients mvSupplierClients)
-        {
-
-            return View();
-        }
-
-        // GET: mvSupplierClients/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductSKU,ProductDescription,ProductSellingPrice,ProductPurchasePrice")] mvProducts mvProducts)
         {
             return View();
         }
 
-        // POST: mvSupplierClients/Delete/5
+        // GET: mvProducts/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            return View();
+        }
+
+        // POST: mvProducts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             return RedirectToAction(nameof(Index));
         }
 
-        //private bool mvSupplierClientsExists(string id)
+        //private bool mvProductsExists(int id)
         //{
-        //    return _context.mvSupplierClients.Any(e => e.SupplierClientName == id);
+        //    return _context.mvProducts.Any(e => e.ProductID == id);
         //}
     }
 }

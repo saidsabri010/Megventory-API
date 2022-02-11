@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\Megventory-API\\Megventory-API\\Megventory-API.csproj": {}
+    "C:\\xampp\\htdocs\\Megventory\\Megventory-API\\Megventory-API\\Megventory-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\Megventory-API\\Megventory-API\\Megventory-API.csproj": {
+    "C:\\xampp\\htdocs\\Megventory\\Megventory-API\\Megventory-API\\Megventory-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Megventory-API\\Megventory-API\\Megventory-API.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\Megventory\\Megventory-API\\Megventory-API\\Megventory-API.csproj",
         "projectName": "Megventory-API",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\Megventory-API\\Megventory-API\\Megventory-API.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\Megventory\\Megventory-API\\Megventory-API\\Megventory-API.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\Megventory-API\\Megventory-API\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\Megventory\\Megventory-API\\Megventory-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
