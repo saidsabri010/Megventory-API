@@ -1,21 +1,28 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace Megventory_API.Models
 {
+    public class mvInventoryLocationsObject
+    {
+        [JsonProperty(PropertyName = "APIKEY")]
+        public string APIKEY { get; set; }
+        [JsonProperty(PropertyName = "mvInventoryLocation")]
+        public mvInventoryLocations mvInventoryLocation { get; set; }
+    }
     public class InventoryLocation
     {
         [JsonProperty(PropertyName = "mvInventoryLocations")]
-        public mvInventoryLocations mvInventoryLocations { get; set; }
+        public List<mvInventoryLocations> mvInventoryLocations { get; set; }
     }
-
     public class mvInventoryLocations
     {
+        [Key]
+        [JsonProperty(PropertyName = "InventoryLocationID")]
+        public bool InventoryLocationID { get; set; }
+
         [JsonProperty(PropertyName = "InventoryLocationAbbreviation")]
-        public bool InventoryLocationAbbreviation { get; set; }
+        public string InventoryLocationAbbreviation { get; set; }
 
         [JsonProperty(PropertyName = "InventoryLocationName")]
         public string InventoryLocationName { get; set; }

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Megventory_API.Models.mvInventoryLocations>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryLocationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryLocationAbbreviation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.AddressType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.AddressLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.CountryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.ZipCode)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryLocationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryLocationAbbreviation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.AddressType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.AddressLine1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.CountryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.ZipCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InventoryLocationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InventoryLocationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InventoryLocationID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

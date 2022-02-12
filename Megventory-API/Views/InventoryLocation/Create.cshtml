@@ -1,0 +1,59 @@
+﻿@model Megventory_API.Models.mvInventoryLocationsObject
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Inventory Location</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="mvInventoryLocation.InventoryLocationName" class="control-label"></label>
+                <input asp-for="mvInventoryLocation.InventoryLocationName" class="form-control" />
+                <span asp-validation-for="mvInventoryLocation.InventoryLocationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvInventoryLocation.InventoryLocationAbbreviation" class="control-label"></label>
+                <input asp-for="mvInventoryLocation.InventoryLocationAbbreviation" class="form-control" />
+                <span asp-validation-for="mvInventoryLocation.InventoryLocationAbbreviation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvInventoryLocation.Address.AddressType" class="control-label"></label>
+                <input asp-for="mvInventoryLocation.Address.AddressType" class="form-control" />
+                <span asp-validation-for="mvInventoryLocation.Address.AddressType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvInventoryLocation.Address.AddressLine1" class="control-label"></label>
+                <input asp-for="mvInventoryLocation.Address.AddressLine1" class="form-control" />
+                <span asp-validation-for="mvInventoryLocation.Address.AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvInventoryLocation.Address.CountryName" class="control-label"></label>
+                <input asp-for="mvInventoryLocation.Address.CountryName" class="form-control" />
+                <span asp-validation-for="mvInventoryLocation.Address.CountryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvInventoryLocation.Address.ZipCode" class="control-label"></label>
+                <input asp-for="mvInventoryLocation.Address.ZipCode" class="form-control" />
+                <span asp-validation-for="mvInventoryLocation.Address.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
