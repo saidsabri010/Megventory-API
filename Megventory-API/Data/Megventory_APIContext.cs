@@ -17,5 +17,7 @@ namespace Megventory_API.Data
         public DbSet<Megventory_API.Models.mvSupplierClients> mvSupplierClients { get; set; }
 
         public DbSet<Megventory_API.Models.mvProducts> mvProducts { get; set; }
+
+        public DbSet<Megventory_API.Models.Taxes> Taxes { get; set; }
     }
 }
