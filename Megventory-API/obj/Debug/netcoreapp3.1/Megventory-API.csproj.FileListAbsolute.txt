@@ -328,3 +328,8 @@ C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1
 C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\Taxes\Details.cshtml.g.cs
 C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\Taxes\Edit.cshtml.g.cs
 C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\Taxes\Index.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Create.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Delete.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Details.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Edit.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Index.cshtml.g.cs
