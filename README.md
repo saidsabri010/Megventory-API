@@ -18,7 +18,7 @@ const string BASE_URL = "https://api.megaventory.com/v2017a/";
 The APIKEY should be replaced in the code with your own,this web app doesnot cover all endpoints but some manner and proccess go with the rest.
 
 ## the relation of this project with another project of mine
-I have worked before on a project which was an android movie app based app where i have to parse json to string by making Json requests either object request or array one,sometimes both of them at the same time, the only difference is that in this project i had to parse objects to string,in otherwords we say **Serialization** and **deserialization **.
+I have worked before on a project which was an android movie app based app where i have to parse json to string by making Json requests either object request or array one,sometimes both of them at the same time, the only difference is that in this project i had to parse objects to string,in otherwords we say **Serialization** and **deserialization**.
 
 The Get Http method,get all suplier clients : 
 
@@ -27,3 +27,7 @@ The Get Http method,get all suplier clients :
 The Post Http method front-end for clients : 
 
 ![app](create.png)
+
+The front-end of all added entities : 
+
+![app](mega.png)
