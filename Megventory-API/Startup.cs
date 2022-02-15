@@ -47,7 +47,7 @@ namespace Megventory_API
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
@@ -58,6 +58,8 @@ namespace Megventory_API
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            
+            
         }
     }
 }

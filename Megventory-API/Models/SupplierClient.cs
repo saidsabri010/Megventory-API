@@ -7,6 +7,22 @@ using System.Threading.Tasks;
 
 namespace Megventory_API.Models
 {
+    public class Filtering
+    {
+        [JsonProperty(PropertyName = "APIKEY")]
+        public string APIKEY { get; set; }
+        [JsonProperty(PropertyName = "Filters")]
+        public List<Filters> Filters { get; set; }
+    }
+    public class Filters
+    {
+        [JsonProperty(PropertyName = "FieldName")]
+        public string FieldName { get; set; }
+        [JsonProperty(PropertyName = "SearchOperator")]
+        public string SearchOperator { get; set; }
+        [JsonProperty(PropertyName = "SearchValue")]
+        public int SearchValue { get; set; }
+    }
     public class RootObjectPost 
     {
         [JsonProperty(PropertyName = "APIKEY")]
@@ -21,7 +37,6 @@ namespace Megventory_API.Models
     }
     public class mvSupplierClients
     {
-        
         [Key]
         [JsonProperty(PropertyName = "SupplierClientID")]
         public int SupplierClientID { get; set; }

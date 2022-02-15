@@ -11,6 +11,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Megventory_API.Controllers
 {
@@ -18,15 +19,15 @@ namespace Megventory_API.Controllers
     {
         private readonly IHttpClientFactory _context;
         public RootObject supplierClients { get; set; }
-        
+        public Filtering filtering { get; set; }
 
         const string BASE_URL = "https://api.megaventory.com/v2017a/";
 
+        [ActivatorUtilitiesConstructor]
         public mvSupplierClientsController(IHttpClientFactory context)
         {
             _context = context;
         }
-
         // GET: mvSupplierClients
         public async Task<IActionResult> Index()
         {
@@ -97,11 +98,34 @@ namespace Megventory_API.Controllers
 
             return View(rootObjectPost);
         }
-
+        [HttpGet]
         // GET: mvSupplierClients/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int SupplierClientID)
         {
+            //if (SupplierClientID.Equals(null))
+            //{
+            //    return NotFound();
+            //}
+            //var message = new HttpRequestMessage();
+            //message.Method = HttpMethod.Get;
+            //message.RequestUri = new Uri($"{BASE_URL}json/reply/SupplierClientGet");
+            //message.Headers.Add("Accept", "application/json");
 
+            //var client = _context.CreateClient();
+
+            //var response = await client.SendAsync(message);
+
+            //RootObject supplierStudent = null;
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    var responseBody = await response.Content.ReadAsStringAsync();
+            //    supplierClients = JsonConvert.DeserializeObject<RootObject>(responseBody);
+            //}
+            //if (supplierStudent == null)
+            //{
+            //    return NotFound();
+            //}
             return View();
         }
 
@@ -112,7 +136,6 @@ namespace Megventory_API.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("SupplierClientID,SupplierClientName,SupplierClientEmail,SupplierClientBillingAddress,SupplierClientPhone1")] mvSupplierClients mvSupplierClients)
         {
-
             return View();
         }
 

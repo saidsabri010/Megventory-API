@@ -333,3 +333,7 @@ C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1
 C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Details.cshtml.g.cs
 C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Edit.cshtml.g.cs
 C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvDiscounts\Index.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\mvSupplierClients\Edit.cshtml.g.cs
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\bin\Debug\netcoreapp3.1\Nest.dll
+C:\xampp\htdocs\Megventory\Megventory-API\Megventory-API\obj\Debug\netcoreapp3.1\Razor\Views\SalesOrders\Index.cshtml.g.cs
