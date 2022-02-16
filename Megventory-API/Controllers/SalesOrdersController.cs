@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Megventory_API.Controllers
@@ -44,6 +46,38 @@ namespace Megventory_API.Controllers
             }
 
             return View(salesOrder.mvSalesOrders);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(makingOrders orders)
+        {
+            orders.APIKEY = "609e6dc2acd38dc6@m128114";
+            if (ModelState.IsValid)
+            {
+                HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(orders), Encoding.UTF8);
+                System.Diagnostics.Debug.WriteLine("here we go !");
+                System.Diagnostics.Debug.WriteLine(httpContent.ToString());
+                httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+                var message = new HttpRequestMessage();
+                message.Content = httpContent;
+                message.Method = HttpMethod.Post;
+                message.RequestUri = new Uri($"{BASE_URL}json/reply/SalesOrderUpdate");
+                HttpClient client = _context.CreateClient();
+                HttpResponseMessage response = await client.SendAsync(message);
+
+                var result = await response.Content.ReadAsStringAsync();
+                JObject jsonresult = JObject.Parse(result);
+                System.Diagnostics.Debug.WriteLine("here is json :");
+                System.Diagnostics.Debug.WriteLine(jsonresult);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(orders);
         }
     }
 }

@@ -1,0 +1,58 @@
+﻿@model Megventory_API.Models.makingOrders
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>creating Seles Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="mvSalesOrders.SalesOrderClientName" class="control-label"></label>
+                <input asp-for="mvSalesOrders.SalesOrderClientName" class="form-control" />
+                <span asp-validation-for="mvSalesOrders.SalesOrderClientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvSalesOrders.SalesOrderInventoryLocationID" class="control-label"></label>
+                <input asp-for="mvSalesOrders.SalesOrderInventoryLocationID" class="form-control" />
+                <span asp-validation-for="mvSalesOrders.SalesOrderInventoryLocationID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvSalesOrders.SalesOrderStatus" class="control-label"></label>
+                <input asp-for="mvSalesOrders.SalesOrderStatus" class="form-control" />
+                <span asp-validation-for="mvSalesOrders.SalesOrderStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowProductSKU" class="control-label"></label>
+                <input asp-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowProductSKU" class="form-control" />
+                <span asp-validation-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowProductSKU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowQuantity" class="control-label"></label>
+                <input asp-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowQuantity" class="form-control" />
+                <span asp-validation-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowUnitPriceWithTaxAndDiscount" class="control-label"></label>
+                <input asp-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowUnitPriceWithTaxAndDiscount" class="form-control" />
+                <span asp-validation-for="mvSalesOrders.SalesOrderDetails[0].SalesOrderRowUnitPriceWithTaxAndDiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

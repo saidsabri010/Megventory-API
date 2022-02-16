@@ -7,6 +7,37 @@ using System.Threading.Tasks;
 
 namespace Megventory_API.Models
 {
+    public class makingOrders
+    {
+        [JsonProperty(PropertyName = "APIKEY")]
+        public string APIKEY { get; set; }
+        [JsonProperty(PropertyName = "mvSalesOrder")]
+        public mvSalesOrder mvSalesOrders { get; set; }
+    }
+    public class mvSalesOrder
+    {
+        [Key]
+        [JsonProperty(PropertyName = "SalesOrderTypeId")]
+        public string SalesOrderTypeId { get; set; }
+        [JsonProperty(PropertyName = "SalesOrderClientName")]
+        public string SalesOrderClientName { get; set; }
+        [JsonProperty(PropertyName = "SalesOrderInventoryLocationID")]
+        public int SalesOrderInventoryLocationID { get; set; }
+        [JsonProperty(PropertyName = "SalesOrderStatus")]
+        public int SalesOrderStatus { get; set; }
+        [JsonProperty(PropertyName = "SalesOrderDetails")]
+        public SalesOrdersDetails[] SalesOrderDetails { get; set; }
+
+    }
+    public class SalesOrdersDetails
+    {
+        [JsonProperty(PropertyName = "SalesOrderRowProductSKU")]
+        public string SalesOrderRowProductSKU { get; set; }
+        [JsonProperty(PropertyName = "SalesOrderRowQuantity")]
+        public int SalesOrderRowQuantity { get; set; }
+        [JsonProperty(PropertyName = "SalesOrderRowUnitPriceWithTaxAndDiscount")]
+        public int SalesOrderRowUnitPriceWithTaxAndDiscount { get; set; }
+    }
     public class SalesOrder
     {
         [JsonProperty(PropertyName = "mvSalesOrders")]
